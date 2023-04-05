@@ -62,9 +62,6 @@ public class ListUnconfirmedTransactionsByAddressRIBSB {
   @SerializedName(SERIALIZED_NAME_SIZE)
   private Integer size;
 
-  public static final String SERIALIZED_NAME_V_SIZE = "vSize";
-  @SerializedName(SERIALIZED_NAME_V_SIZE)
-  private Integer vSize;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
@@ -127,11 +124,7 @@ public class ListUnconfirmedTransactionsByAddressRIBSB {
   }
 
 
-  public ListUnconfirmedTransactionsByAddressRIBSB vSize(Integer vSize) {
-    
-    this.vSize = vSize;
-    return this;
-  }
+
 
    /**
    * Defines the transaction&#39;s virtual size.
@@ -140,14 +133,8 @@ public class ListUnconfirmedTransactionsByAddressRIBSB {
   @javax.annotation.Nonnull
   @ApiModelProperty(example = "222", required = true, value = "Defines the transaction's virtual size.")
 
-  public Integer getvSize() {
-    return vSize;
-  }
 
 
-  public void setvSize(Integer vSize) {
-    this.vSize = vSize;
-  }
 
 
   public ListUnconfirmedTransactionsByAddressRIBSB version(Integer version) {
@@ -241,7 +228,6 @@ public class ListUnconfirmedTransactionsByAddressRIBSB {
     ListUnconfirmedTransactionsByAddressRIBSB listUnconfirmedTransactionsByAddressRIBSB = (ListUnconfirmedTransactionsByAddressRIBSB) o;
     return Objects.equals(this.locktime, listUnconfirmedTransactionsByAddressRIBSB.locktime) &&
         Objects.equals(this.size, listUnconfirmedTransactionsByAddressRIBSB.size) &&
-        Objects.equals(this.vSize, listUnconfirmedTransactionsByAddressRIBSB.vSize) &&
         Objects.equals(this.version, listUnconfirmedTransactionsByAddressRIBSB.version) &&
         Objects.equals(this.vin, listUnconfirmedTransactionsByAddressRIBSB.vin) &&
         Objects.equals(this.vout, listUnconfirmedTransactionsByAddressRIBSB.vout);
@@ -249,7 +235,7 @@ public class ListUnconfirmedTransactionsByAddressRIBSB {
 
   @Override
   public int hashCode() {
-    return Objects.hash(locktime, size, vSize, version, vin, vout);
+    return Objects.hash(locktime, size, version, vin, vout);
   }
 
   @Override
@@ -258,7 +244,6 @@ public class ListUnconfirmedTransactionsByAddressRIBSB {
     sb.append("class ListUnconfirmedTransactionsByAddressRIBSB {\n");
     sb.append("    locktime: ").append(toIndentedString(locktime)).append("\n");
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
-    sb.append("    vSize: ").append(toIndentedString(vSize)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    vin: ").append(toIndentedString(vin)).append("\n");
     sb.append("    vout: ").append(toIndentedString(vout)).append("\n");
