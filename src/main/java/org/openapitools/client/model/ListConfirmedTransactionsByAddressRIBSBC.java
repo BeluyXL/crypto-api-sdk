@@ -84,7 +84,8 @@ public class ListConfirmedTransactionsByAddressRIBSBC {
   }
 
   public ListConfirmedTransactionsByAddressRIBSBC locktime(Long locktime) {
-    
+
+
     this.locktime = locktime;
     return this;
   }
