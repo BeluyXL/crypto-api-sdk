@@ -62,6 +62,9 @@ public class ListConfirmedTransactionsByAddressRIBSBC {
   @SerializedName(SERIALIZED_NAME_SIZE)
   private Integer size;
 
+  @SerializedName(SERIALIZED_NAME_VSIZE)
+  private Integer vSize;
+
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
   private Integer version;
@@ -74,7 +77,10 @@ public class ListConfirmedTransactionsByAddressRIBSBC {
   @SerializedName(SERIALIZED_NAME_VOUT)
   private List<GetTransactionDetailsByTransactionIDRIBSBCVoutInner> vout = null;
 
-  public ListConfirmedTransactionsByAddressRIBSBC() { 
+  public static final String SERIALIZED_NAME_VSIZE = "vSize";
+
+
+  public ListConfirmedTransactionsByAddressRIBSBC() {
   }
 
   public ListConfirmedTransactionsByAddressRIBSBC locktime(Long locktime) {
@@ -106,6 +112,12 @@ public class ListConfirmedTransactionsByAddressRIBSBC {
     return this;
   }
 
+  public ListConfirmedTransactionsByAddressRIBSBC vSize(Integer vSize) {
+
+    this.vSize = vSize;
+    return this;
+  }
+
    /**
    * Represents the total size of this transaction.
    * @return size
@@ -117,9 +129,17 @@ public class ListConfirmedTransactionsByAddressRIBSBC {
     return size;
   }
 
+  public Integer getVsize() {
+    return vSize;
+  }
+
 
   public void setSize(Integer size) {
     this.size = size;
+  }
+
+  public void setVsize(Integer vSize) {
+    this.vSize = vSize;
   }
 
 
@@ -219,12 +239,13 @@ public class ListConfirmedTransactionsByAddressRIBSBC {
         Objects.equals(this.size, listConfirmedTransactionsByAddressRIBSBC.size) &&
         Objects.equals(this.version, listConfirmedTransactionsByAddressRIBSBC.version) &&
         Objects.equals(this.vin, listConfirmedTransactionsByAddressRIBSBC.vin) &&
-        Objects.equals(this.vout, listConfirmedTransactionsByAddressRIBSBC.vout);
+        Objects.equals(this.vout, listConfirmedTransactionsByAddressRIBSBC.vout) &&
+    Objects.equals(this.vSize, listConfirmedTransactionsByAddressRIBSBC.vSize) ;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(locktime, size, version, vin, vout);
+    return Objects.hash(locktime, size, version, vin, vout, vSize);
   }
 
   @Override
@@ -233,6 +254,7 @@ public class ListConfirmedTransactionsByAddressRIBSBC {
     sb.append("class ListConfirmedTransactionsByAddressRIBSBC {\n");
     sb.append("    locktime: ").append(toIndentedString(locktime)).append("\n");
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
+    sb.append("    vSize: ").append(toIndentedString(vSize)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    vin: ").append(toIndentedString(vin)).append("\n");
     sb.append("    vout: ").append(toIndentedString(vout)).append("\n");
