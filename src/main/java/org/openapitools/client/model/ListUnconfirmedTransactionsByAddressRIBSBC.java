@@ -62,6 +62,8 @@ public class ListUnconfirmedTransactionsByAddressRIBSBC {
   @SerializedName(SERIALIZED_NAME_SIZE)
   private Integer size;
 
+
+
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
   private Integer version;
